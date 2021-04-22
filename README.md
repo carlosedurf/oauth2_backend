@@ -1,20 +1,29 @@
-#API comm OAUTH 2.0 - Laravel Passport
+# API comm OAUTH 2.0 - Laravel Passport
 
 [fonte da implementação](https://laravel.com/docs/8.x/passport)
 
 Feito como forma de consulta para quando for implementar em outro projeto.
 <hr>
 
-###Para facilitar a autenticação adicionei laravel ui com --auth
+### Para facilitar a autenticação adicionei laravel ui com --auth
 
 #### Passos a seguir:
 * composer require laravel/ui
 * php artisan ui bootstrap --auth
 * php artisan migrate
 
+### Comandos para cadastrar novos clients
+* php artisan passport:install
+    * Para instalar e gerar as migrations do passport
+* php artisan passport:client
+* php artisan passport:client --password
+  * Creating A Password Grant Client
+* php artisan passport:client --client
+    * Client Credentials Grant Tokens
+
 <hr>
 
-###Arquivos utilizados
+### Arquivos utilizados
 * <strong>/routes/api.php</strong> = para fazer teste de obter informações 
 * <strong>/app/Http/Kernel.php</strong> = Adicionante Client em $routeMiddleware 
 * <strong>/app/Providers/AppServiceProvider.php</strong> = Para fazer hash unico de secret token (caso for utilizar) 
